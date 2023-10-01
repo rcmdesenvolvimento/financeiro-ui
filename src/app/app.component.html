@@ -1,77 +1,7 @@
 
-<!-- <div class="ui-g">
-
-  <div class="ui-g-12">
-    <h1>Lançamentos</h1>
-  </div>
-
-  <div class="ui-g-12 ui-fluid">
-    <label>Descrição</label>
-    <input pInputText type="text" class="p-inputtext-sm" >
-  </div>
-
-</div> -->
-
 <!-- <router-outlet></router-outlet> -->
 
-<div class="container">
-  <div class="grid">
-    <div class="col-12">
-      <h1>Lançamentos</h1>
-    </div>
+<app-lancamentos-pesquisa></app-lancamentos-pesquisa>
 
-    <div class="col-12 p-fluid">
-      <label>Descrição</label>
-      <input pInputText type="text" class="p-inputtext-sm">
-    </div>
-    <br/>
-    <div class="col-12">
-      <label style="display: block">Vencimento</label>
-      <input pInputText type="text" style="width: 95px" class="p-inputtext-sm">&nbsp;
-
-      <label class="label">até</label>&nbsp;
-      <input pInputText type="text" style="width: 95px" class="p-inputtext-sm">
-    </div>
-    <br/>
-    <div class="col-12">
-      <p-button label="Pesquisar" styleClass="p-button-raised"></p-button>&nbsp;
-      <a pButton label="Novo Lançamento"></a>
-    </div>
-  </div>
-
-  <br/>
-
-  <div class="ui-g">
-    <div class="ui-g-12">
-      <p-table [value]="lancamentos " [tableStyle]="{ 'min-width': '50rem' }"
-               dataKey="code" [paginator]="true" [rows]="5" [selectionPageOnly]="true"
-               styleClass="p-datatable-gridlines" selectionMode="single">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Pessoa</th>
-                <th>Tipo</th>
-                <th>Descrição</th>
-                <th>Vencimento</th>
-                <th>Pagamento</th>
-                <th>Valor</th>
-                <th style="width: 105px; text-align: center;">Ações</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-lanc>
-            <tr>
-                <td>{{ lanc.pessoa}}</td>
-                <td>{{ lanc.tipo}}</td>
-                <td>{{ lanc.descricao}}</td>
-                <td class="col-data">{{ lanc.dataVencimento}}</td>
-                <td class="col-data">{{ lanc.dataPagamento}}</td>
-                <td class="col-valor" [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lanc.valor}}</td>
-                <a pButton icon="fa fa-pencil" pToolTip="Editar" tooltipPosition="bottom"></a>&nbsp;
-                <button pButton icon="fa fa-trash" pToolTip="Excluir" tooltipPosition="bottom"></button>
-            </tr>
-        </ng-template>
-      </p-table>
-    </div>
-  </div>
-</div>
  <!-- Aula : 10.5 -->
 
