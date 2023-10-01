@@ -34,7 +34,8 @@
     </div>
     <br/>
     <div class="col-12">
-      <p-button label="Pesquisar" styleClass="p-button-raised"></p-button>
+      <p-button label="Pesquisar" styleClass="p-button-raised"></p-button>&nbsp;
+      <a pButton label="Novo Lançamento"></a>
     </div>
   </div>
 
@@ -43,6 +44,7 @@
   <div class="ui-g">
     <div class="ui-g-12">
       <p-table [value]="lancamentos " [tableStyle]="{ 'min-width': '50rem' }"
+               dataKey="code" [paginator]="true" [rows]="5" [selectionPageOnly]="true"
                styleClass="p-datatable-gridlines" selectionMode="single">
         <ng-template pTemplate="header">
             <tr>
@@ -52,7 +54,7 @@
                 <th>Vencimento</th>
                 <th>Pagamento</th>
                 <th>Valor</th>
-                <th style="width: 11%; text-align: center;">Ações</th>
+                <th style="width: 105px; text-align: center;">Ações</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-lanc>
@@ -63,25 +65,13 @@
                 <td class="col-data">{{ lanc.dataVencimento}}</td>
                 <td class="col-data">{{ lanc.dataPagamento}}</td>
                 <td class="col-valor" [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lanc.valor}}</td>
-                  <!-- <td><a pButton icon="fa-pencil"></a>&nbsp;
-                      <Button pButton icon="fa-trash"></Button> </td> -->
-                  <!-- <td><Button pButton icon="fa-trash"></Button></td> -->
-                  <div class="btn-group">
-                    <button pButton tooltip="Editar"><i class="fa fa-edit" ></i></button>&nbsp;
-                    <button pButton tooltip="Editar"><i class="fa fa-eraser"></i></button>
-                  </div>
-
-
+                <a pButton icon="fa fa-pencil" pToolTip="Editar" tooltipPosition="bottom"></a>&nbsp;
+                <button pButton icon="fa fa-trash" pToolTip="Excluir" tooltipPosition="bottom"></button>
             </tr>
         </ng-template>
       </p-table>
     </div>
   </div>
-  <br/>
-  <div class="col-12">
-    <a pButton label="Novo Lançamento"></a>
-  </div>
 </div>
-
  <!-- Aula : 10.5 -->
 
